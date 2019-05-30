@@ -3,8 +3,9 @@ fn is_prime(n: &u32) -> bool {
     !(2..max).any(|x| *n % x == 0)
 }
 
-pub fn nth(n: u32) -> Option<u32> {
+pub fn nth(n: u32) -> u32 {
     (2..).filter(|x| is_prime(x))
-         .take(n as usize)
+         .take(1 + n as usize)
          .last()
+         .unwrap()
 }
