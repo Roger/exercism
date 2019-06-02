@@ -15,9 +15,7 @@ pub struct Clock {
 
 impl fmt::Display for Clock {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let hours = euc_mod(self.minutes / 60, 24);
-        let minutes = self.minutes % 60;
-        write!(f, "{:02}:{:02}", hours, minutes)
+        write!(f, "{:02}:{:02}", self.minutes / 60, self.minutes % 60)
     }
 }
 
